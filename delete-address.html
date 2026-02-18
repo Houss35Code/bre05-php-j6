@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Supprimer une adresse</title>
+</head>
+<body>
+    <h2>Supprimer une adresse</h2>
+    <p style="color: red;">Attention : cette action est irréversible.</p>
+    
+    <form action="delete-address.php" method="post">
+        <div>
+            <label for="id">ID de l'adresse à supprimer :</label>
+            <input type="number" name="id" id="id" required>
+        </div>
+        <br>
+        <button type="submit" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette adresse ?')">
+            Supprimer définitivement
+        </button>
+    </form>
+</body>
+</html>
