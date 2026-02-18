@@ -1,23 +1,17 @@
 <?php
 
-$host = 'localhost';
-$dbname = 'pdophphoussouni_';
-$username = 'root';
-$password = '';
-$charset = 'utf8';
+$host = "db.3wa.io";
+$port = "3306";
+$dbname = "houssounihalifa_phpj6"; // nom exact sur le serveur école
+$connexionString = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8";
 
-$dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
+$user = "houssounihalifa";     // identifiant école
+$password = "43e3596f3a7986e99288e13a3e5824c7"; // mot de passe école
 
-$options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-];
-
-try {
-    $db = new PDO($dsn, $username, $password, $options);
-    echo "Connexion reussie !";
-} catch (PDOException $e) {
-    die("Erreur de connexion : " . $e->getMessage());
-}
+$db = new PDO(
+    $connexionString,
+    $user,
+    $password
+);
 
 var_dump($db);
